@@ -10,3 +10,11 @@ def get_duration(playlist: Union[str, dict], n: int):
                 playlist_dict[song] = timedelta(minutes=minutes, seconds=seconds)
     else:
         playlist_dict = playlist
+
+    if len(playlist_dict) < n:
+        raise ValueError("Плейлист содержит меньше песен, чем запрошенное количество.")
+
+    random_songs = random.sample(list(playlist_dict.values()), n)
+    total_duration = sum(random_songs, timedelta())
+
+    return total_duration
