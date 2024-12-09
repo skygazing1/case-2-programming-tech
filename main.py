@@ -32,7 +32,7 @@ def main():
     
     print(
         pd.get_duration(playlist=playlist_e, n=3), 
-        pd.get_duration(playlist=playlist_b, n=3), # TODO - TypeError: unsupported operand type(s) for +: 'datetime.timedelta' and 'float'
+        pd.get_duration(playlist=playlist_b, n=3),
         sep="\n"
         )
 
